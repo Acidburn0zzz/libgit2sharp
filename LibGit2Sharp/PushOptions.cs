@@ -11,6 +11,12 @@ namespace LibGit2Sharp
         /// <summary>
         /// The <see cref="Credentials"/> to authenticate with during the push.
         /// </summary>
+        [Obsolete("This will be removed in future release. Use CredentialsProvider.")]
+        public Credentials Credentials { get; set; }
+
+        /// <summary>
+        /// Handler to generate <see cref="LibGit2Sharp.Credentials"/> for authentication.
+        /// </summary>
         public CredentialsHandler CredentialsProvider { get; set; }
 
         /// <summary>
