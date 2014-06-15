@@ -291,7 +291,7 @@ namespace LibGit2Sharp
             // Load the remote.
             using (RemoteSafeHandle remoteHandle = Proxy.git_remote_load(repository.Handle, remote.Name, true))
             {
-                var callbacks = new RemoteCallbacks(null, null, null, pushOptions.CredentialsProvider);
+                var callbacks = new RemoteCallbacks(null, null, null, pushOptions);
                 GitRemoteCallbacks gitCallbacks = callbacks.GenerateCallbacks();
                 Proxy.git_remote_set_callbacks(remoteHandle, ref gitCallbacks);
 
